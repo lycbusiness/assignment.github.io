@@ -1,0 +1,58 @@
+body, html {  
+    margin: 0;  
+    padding: 0;  
+    height: 100%;  
+    overflow: hidden; /* Prevent scrolling */  
+}  
+  
+.background-container {  
+    position: relative;  
+    height: 100%;  
+    width: 100%;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    text-align: center;  
+    color: white; /* Text color for better visibility against the background */  
+    z-index: 1; /* Ensure the text is above the background images */  
+}  
+  
+/* Background images */  
+.background-image-1 {  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background-image: url('image1.jpg'); /* Replace with your image URL */  
+    background-size: cover; /* Scale the image to cover the entire container */  
+    background-position: center; /* Center the image */  
+    opacity: 0.5; /* Adjust opacity for a layered effect */  
+    z-index: -1; /* Ensure the image is behind the text */  
+}  
+  
+.background-image-2 {  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background-image: url('image2.png'); /* Replace with your image URL */  
+    background-size: cover;  
+    background-position: center;  
+    opacity: 0.3; /* Different opacity for a different layered effect */  
+    z-index: -2; /* Ensure this image is behind the first one */  
+}  
+  
+/* Add more .background-image-X classes as needed for additional images */  
+  
+/* Optional: Add some styling for the text */  
+h1 {  
+    font-size: 3em;  
+    margin: 0;  
+}  
+  
+p {  
+    font-size: 1.5em;  
+    margin: 10px 0 0;  
+}
