@@ -10,8 +10,8 @@ body, html {
   
 .image-container {  
     position: relative;  
-    width: 300px; /* Adjust as needed */  
-    height: 450px; /* Adjust as needed, should be enough to hold all images */  
+    width: 600px; /* Adjust as needed */  
+    height: 900px; /* Adjust as needed, should be enough to hold all images */  
 }  
   
 .image-container img {  
