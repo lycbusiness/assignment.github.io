@@ -13,7 +13,7 @@ body, html {
     justify-content: center;  
     align-items: center;  
     text-align: center;  
-    color: white; /* Text color for better visibility against the background */  
+    color: black; /* Text color for better visibility against the background */  
     z-index: 1; /* Ensure the text is above the background images */  
 }  
   
