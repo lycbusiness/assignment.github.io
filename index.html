@@ -3,14 +3,123 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>作业</title>  
-    <link rel="stylesheet" href="styles.css">  
+    <title>战锤图片与更多信息</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f0f0f0;  
+        }  
+        header, section {  
+            max-width: 80%;  
+            margin: 0 auto;  
+            padding: 20px;  
+            box-sizing: border-box;  
+        }  
+        header h1 {  
+            text-align: center;  
+        }  
+        .image-container {  
+            display: flex;  
+            justify-content: space-around;  
+            margin-bottom: 20px;  
+        }  
+        .image-container img {  
+            max-width: 30%;  
+            height: auto;  
+            border: 2px solid #ccc;  
+            border-radius: 8px;  
+            transition: transform 0.3s ease;  
+        }  
+        .image-container img:hover {  
+            transform: scale(1.05);  
+        }  
+        .scrollable-text {  
+            max-height: 200px; /* 设置最大高度以启用滚动条 */  
+            overflow-y: auto; /* 启用垂直滚动条 */  
+            border: 1px solid #ccc;  
+            border-radius: 8px;  
+            background-color: #fff;  
+            padding: 10px;  
+            margin-bottom: 20px;  
+        }  
+        nav {  
+            text-align: center;  
+            padding: 10px;  
+            background-color: #333;  
+        }  
+        nav a {  
+            color: #fff;  
+            text-decoration: none;  
+            margin: 0 10px;  
+        }  
+        nav a:hover {  
+            text-decoration: underline;  
+        }  
+    </style>  
 </head>  
 <body>  
-    <div class="image-container">  
-        <img src="王座.jpg" alt="Image 1" class="top-image">  
-        <img src="hd.jpg" alt="Image 2" class="top-image">  
-        <img src="sf.jpg" alt="Image 3" class="bottom-image">  
-    </div>  
+    <nav>  
+        <a href="#gallery">图片展示</a>  
+        <a href="#sources">图片来源</a>  
+        <a href="#citations">引用</a>  
+    </nav>  
+  
+    <header>  
+        <h1>战锤图片</h1>  
+    </header>  
+  
+    <section id="gallery">  
+        <div class="image-container">  
+            <img src="hd.jpg" alt="Image 1">  
+            <img src="sf.jpg" alt="Image 2">  
+            <img src="王座.jpg" alt="Image 3">  
+        </div>  
+        <!-- 可以在这里添加更多关于图片展示的内容 -->  
+    </section>  
+  
+    <section id="sources">  
+        <h2>图片来源</h2>  
+        <div class="scrollable-text">  
+            <p>该图片来源于哔哩哔哩以及百度百科</p>  
+            <p>该图片来源于哔哩哔哩以及百度百科</p>  
+            <p>该图片来源于哔哩哔哩以及百度百科</p>  
+            <!-- 可以添加更多来源信息 -->  
+        </div>  
+    </section>  
+  
+    <section id="citations">  
+        <h2>引用</h2>  
+        <div class="scrollable-text">  
+            <p>这里可以添加关于图片的引用信息，比如从哪些书籍、网站或文章中获取了这些图片。</p>  
+            <!-- 可以添加更多引用信息 -->  
+        </div>  
+    </section>  
+  
+    <script>  
+        // 可选：添加一些JavaScript来平滑滚动到页面部分（不是必需的）  
+        document.querySelectorAll('nav a').forEach(anchor => {  
+            anchor.addEventListener('click', function (e) {  
+                e.preventDefault();  
+  
+                document.querySelector(this.getAttribute('href')).scrollIntoView({  
+                    behavior: 'smooth'  
+                });  
+  
+                // 更新URL以反映当前视图（可选）  
+                history.pushState(null, '', this.getAttribute('href'));  
+            });  
+        });  
+  
+        // 可选：监听popstate事件以在返回/前进时滚动到正确的位置（不是必需的）  
+        window.addEventListener('popstate', function () {  
+            const targetId = location.hash.substring(1);  
+            const targetElement = document.getElementById(targetId);  
+            if (targetElement) {  
+                targetElement.scrollIntoView({ behavior: 'smooth' });  
+            }  
+        });  
+    </script>  
 </body>  
 </html>
